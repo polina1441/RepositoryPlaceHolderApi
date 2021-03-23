@@ -4,10 +4,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 object Retrofit {
-    val BASE_URL = "https://jsonplaceholder.typicode.com/"
+    val RICK_MORTY_URL = "https://rickandmortyapi.com/"
+    //"https://jsonplaceholder.typicode.com/"
     val retrofit : Retrofit by lazy {
         Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(RICK_MORTY_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build();
     }

@@ -1,4 +1,4 @@
-package com.polich.repository
+package com.polich.repository.todos
 
 data class TodosItem(
     val completed: Boolean,
