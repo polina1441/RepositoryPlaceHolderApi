@@ -1,22 +1,18 @@
-package com.polich.repository.ui.main
+package com.polich.repository.ui
 
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
 import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
 import com.polich.repository.R
 import com.polich.repository.Resource
-import com.polich.repository.Result
-import com.polich.repository.responce
-import org.w3c.dom.Text
-import kotlin.concurrent.fixedRateTimer
+import com.polich.repository.character.Result
+import com.polich.repository.character.Responce
 
 class TrueFragment : Fragment() {
     companion object {
@@ -38,7 +34,7 @@ class TrueFragment : Fragment() {
                     ArrayAdapter<Result>(
                         requireContext(),
                         android.R.layout.simple_list_item_1,
-                        it.data?.results ?: responce().results
+                        it.data?.results ?: Responce().results
 
                     )
                     Log.d("asd", it.data.toString())
@@ -54,7 +50,7 @@ class TrueFragment : Fragment() {
         val but_ok : Button = view.findViewById(R.id.but_ok)
         val block_info : LinearLayout = view.findViewById(R.id.info_linear)
         val textView : TextView = view.findViewById(R.id.textViewShowItem)
-        val animHide = AnimationUtils.loadAnimation(requireContext(), R.anim.anim_hide)
+        /*val animHide = AnimationUtils.loadAnimation(requireContext(), R.anim.anim_hide)
         animHide.setAnimationListener(object : Animation.AnimationListener{
             override fun onAnimationStart(animation: Animation?) {}
             override fun onAnimationEnd(animation: Animation?) {
@@ -120,7 +116,8 @@ class TrueFragment : Fragment() {
             //listView.visibility = View.VISIBLE
             but_tk.visibility = View.VISIBLE
             textView.visibility = View.GONE
-        }
+        }*/
+
         return view
     }
 }

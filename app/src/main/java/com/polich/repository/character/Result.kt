@@ -1,4 +1,4 @@
-package com.polich.repository
+package com.polich.repository.character
 
 data class Result(
     val created: String = "",

@@ -2,7 +2,7 @@ package com.polich.repository
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.polich.repository.ui.main.TrueFragment
+import com.polich.repository.ui.TrueFragment
 
 class TrueActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,6 +1,6 @@
-package com.polich.repository
+package com.polich.repository.character
 
-data class responce(
+data class Responce(
     val info: Info = Info(),
     val results: List<Result> = listOf()
 )

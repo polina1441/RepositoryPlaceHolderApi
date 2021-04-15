@@ -1,4 +1,4 @@
-package com.polich.repository.ui.main
+package com.polich.repository.ui
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -9,7 +9,7 @@ import com.polich.repository.ArchApplication
 import com.polich.repository.Repository
 import com.polich.repository.Resource
 import com.polich.repository.todos.Todos
-import com.polich.repository.responce
+import com.polich.repository.character.Responce
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -19,17 +19,17 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         loadTodos()
     }
     private val _todos : MutableLiveData<Resource<Todos>> = MutableLiveData()
-    private val _character : MutableLiveData<Resource<responce>> = MutableLiveData()
+    private val _character : MutableLiveData<Resource<Responce>> = MutableLiveData()
 
     val todos : LiveData<Resource<Todos>> = _todos
-    val character : LiveData<Resource<responce>> = _character
+    val character : LiveData<Resource<Responce>> = _character
 
     private fun loadTodos(){
         viewModelScope.launch(Dispatchers.IO) {
             //_todos.postValue(Resource.Loading<Todos>())
             //_todos.postValue(Resource.Success<Todos>(repository.getTodos() ?: Todos()))
-            _character.postValue(Resource.Loading<responce>())
-            _character.postValue(Resource.Success<responce>(repository.getCharacter() ?: responce()))
+            _character.postValue(Resource.Loading<Responce>())
+            _character.postValue(Resource.Success<Responce>(repository.getCharacter() ?: Responce()))
         }
     }
 }
